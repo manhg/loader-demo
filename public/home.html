@@ -1,0 +1,18 @@
+<x-hello></x-hello>
+
+<script src="/vendor/riot+c.js"></script>
+<script src="/vendor/curl.js"></script>
+<script>
+curl.config({
+  baseurl: '/',
+  pluginPath: '/'
+});
+curl([
+  'lib/util'
+], function(util) {
+  util.great()
+  riot.compile('/tag/hello.tag', function() {
+    riot.mount('x-hello')
+  });
+})
+</script>
